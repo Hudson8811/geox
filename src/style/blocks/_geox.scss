@@ -1,0 +1,555 @@
+.geox {
+  position: relative;
+  height: vw(1024);
+  width: 100%;
+
+  @include mq('phablet') {
+    height: auto;
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: center / cover url(../images/fs-bg.png) no-repeat;
+
+    @include mq('phablet') {
+      position: relative;
+      height: vwm(280);
+      background: center / cover url(../images/fs-mobile-bg.png) no-repeat;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+
+    @include mq('phablet') {
+      position: relative;
+      margin-top: vwm(20);
+      padding: 0 vwm(10);
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    z-index: 2;
+    top: vw(43);
+    right: vw(78);
+    display: block;
+    width: vw(228);
+    height: vw(60);
+
+    @include mq('phablet') {
+      top: vwm(12);
+      right: vwm(10);
+      width: vwm(93);
+      height: vwm(24);
+    }
+
+    &-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  &__heading {
+    position: absolute;
+    left: vw(142);
+    top: vw(337);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include mq('phablet') {
+      left: auto;
+      top: auto;
+      position: relative;
+      display: block;
+    }
+
+    &-space {
+      display: block;
+      height: 1vw;
+      width: vw(657);
+
+      @include mq('phablet') {
+        display: none;
+      }
+    }
+
+    &-item {
+      display: block;
+      font-weight: 600;
+      font-size: vw(137);
+      line-height: vw(167);
+      text-transform: uppercase;
+      color: #000000;
+
+      @include mq('phablet') {
+        display: inline;
+        font-size: vwm(34);
+        line-height: vwm(41);
+      }
+    }
+  }
+
+  &__desc {
+    position: absolute;
+    left: vw(142);
+    bottom: vw(0);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: vw(359);
+    height: vw(350);
+    font-weight: normal;
+    font-size: vw(65);
+    line-height: vw(79);
+    color: #000000;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
+
+    @include mq('phablet') {
+      position: relative;
+      left: auto;
+      bottom: auto;
+      display: block;
+      width: 100%;
+      height: auto;
+      text-shadow: none;
+      text-align: left;
+      font-size: vwm(20);
+      line-height: vwm(24);
+      font-weight: bold;
+    }
+  }
+}
+
+.preview {
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
+  padding: vw(73) vw(162) vw(113) vw(162);
+
+  @include mq('phablet') {
+    padding: vwm(20) vwm(10) vwm(30);
+  }
+
+  &__desc {
+    display: block;
+    margin-bottom: vw(93);
+    font-weight: normal;
+    font-size: vw(40);
+    line-height: 150.69%;
+    text-align: center;
+    color: #000000;
+
+    @include mq('phablet') {
+      font-size: vwm(20);
+      line-height: 140%;
+      margin-bottom: vwm(30);
+      text-align: left;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal;
+    font-size: vw(50);
+    line-height: vw(61);
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+    background: #e3cabd;
+    border-radius: vw(10);
+    width: vw(432);
+    height: vw(112);
+    margin: 0 auto;
+    transition: 0.2s linear;
+    cursor: pointer;
+    filter: drop-shadow(4px 4px 20px rgba(0, 0, 0, 0.15));
+
+    @include mq('phablet') {
+      width: vwm(300);
+      height: vwm(51);
+      border-radius: vwm(4.53704);
+      font-size: vwm(22.6852);
+      line-height: vwm(28);
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.test {
+  &__image {
+    display: block;
+    @include mq('phablet') {
+      order: 2;
+      margin: 0 !important;
+      width: 100%;
+    }
+  }
+  &__item {
+    height: vw(1024);
+    padding: vw(112) vw(78) vw(140) vw(142);
+
+    @include mq('phablet') {
+      height: auto;
+      padding: 0 vwm(10) vwm(30) !important;
+      background-color: #fff !important;
+    }
+
+    picture {
+      @include mq('phablet') {
+        order: 2;
+      }
+    }
+
+    &#item1 {
+      padding-bottom: vw(11);
+
+      .test__heading {
+        margin-bottom: 0;
+      }
+
+      .test__image {
+        width: vw(715);
+        margin-right: vw(72);
+        margin-top: vw(-42);
+      }
+
+      @include mq('phablet') {
+        padding-bottom: 0;
+
+        .test__image {
+          width: vwm(300);
+        }
+      }
+    }
+
+    &#item2,
+    &#item4,
+    &#item6 {
+      padding-right: vw(0);
+      .test__image {
+        width: vw(718);
+        margin-left: vw(75);
+
+        @include mq('phablet') {
+          width: vwm(320);
+        }
+      }
+    }
+
+    &#item6 {
+      .test__image {
+        margin-left: vw(36);
+      }
+    }
+
+    &#item3 {
+      .test__image {
+        width: vw(724);
+        margin-right: vw(93);
+
+        @include mq('phablet') {
+          width: vwm(320);
+        }
+      }
+    }
+
+    &#item5 {
+      padding-bottom: 0;
+      padding-right: vw(210);
+      .test__heading {
+        margin-bottom: vw(39);
+      }
+
+      .test__image {
+        width: vw(863);
+        margin-right: vw(-22);
+        margin-bottom: vw(-40);
+
+        @include mq('phablet') {
+          width: vwm(320);
+        }
+      }
+      .test__vars {
+        margin-bottom: vw(120);
+      }
+    }
+
+    &#item7 {
+      padding-bottom: vw(40);
+      .test__heading {
+        margin-bottom: 0;
+      }
+
+      .test__image {
+        width: vw(1016);
+        margin-left: vw(-139);
+        margin-right: vw(-20);
+        margin-top: vw(-60);
+
+        @include mq('phablet') {
+          width: vwm(320);
+        }
+      }
+    }
+  }
+
+  &__heading {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: vw(95);
+
+    @include mq('phablet') {
+      display: block;
+      margin-bottom: vwm(30) !important;
+    }
+  }
+
+  &__counts {
+    display: block;
+    margin-right: vw(53);
+    font-weight: bold;
+    font-size: vw(75);
+    line-height: vw(88);
+    display: flex;
+    align-items: center;
+    color: #000000;
+
+    @include mq('phablet') {
+      margin-right: 0;
+      font-size: vwm(20);
+      line-height: vwm(24);
+      margin-bottom: vwm(5);
+    }
+  }
+
+  &__title {
+    align-self: flex-end;
+    display: block;
+    font-weight: bold;
+    font-size: vw(50);
+    line-height: vw(61);
+    color: #000000;
+
+    @include mq('phablet') {
+      font-weight: bold;
+      font-size: vwm(20);
+      line-height: vwm(24);
+      color: #000000;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: flex-start;
+    align-self: center;
+
+    @include mq('phablet') {
+      flex-direction: column;
+      justify-content: stretch;
+      align-items: center;
+    }
+  }
+
+  &__vars {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    @include mq('phablet') {
+      order: 1;
+      width: 100%;
+      margin-bottom: vwm(35);
+    }
+  }
+
+  &__label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+
+    &.start {
+      @include mq('phablet') {
+        align-items: flex-start;
+      }
+    }
+
+    & + & {
+      margin-top: vw(41);
+
+      @include mq('phablet') {
+        margin-top: vwm(14);
+      }
+    }
+  }
+
+  &__baseInput {
+    display: none;
+
+    &:checked ~ .test__input {
+      background: #cdb7ac;
+    }
+  }
+
+  &__input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: vw(117);
+    height: vw(117);
+    font-weight: bold;
+    font-size: vw(47);
+    line-height: vw(57);
+    color: #000000;
+    background-color: transparent;
+    border: vw(6) solid #cdb7ac;
+    flex-shrink: 0;
+    border-radius: 50%;
+    margin-right: vw(56);
+
+    @include mq('phablet') {
+      width: vwm(51);
+      height: vwm(51);
+      border: vwm(3) solid #cdb7ac;
+      margin-right: vwm(10);
+      font-size: vwm(20);
+      line-height: vwm(24);
+    }
+  }
+
+  &__desc {
+    display: block;
+    font-weight: normal;
+    font-size: vw(40);
+    line-height: vw(49);
+    color: #000000;
+
+    @include mq('phablet') {
+      font-size: vwm(20);
+      line-height: 140%;
+
+      br {
+        display: none;
+      }
+
+      .nowrap {
+        white-space: normal;
+      }
+    }
+  }
+
+  &__result {
+    min-height: vw(1022);
+    display: none;
+    padding: vw(110) vw(10) vw(104) vw(159);
+
+    @include mq('phablet') {
+      height: auto;
+      padding: vwm(40) vwm(10);
+    }
+
+    &__heading {
+      display: block;
+      margin-bottom: vw(65);
+      font-weight: bold;
+      font-size: vw(50);
+      line-height: vw(61);
+      color: #000000;
+
+      @include mq('phablet') {
+        margin-bottom: vwm(22);
+        font-size: vwm(20);
+        line-height: vwm(24);
+      }
+    }
+
+    &__content {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      @include mq('phablet') {
+        display: block;
+      }
+    }
+
+    &__desc {
+      &-wrapper {
+        display: block;
+        margin-right: vw(25);
+        width: vw(624);
+        flex-shrink: 0;
+
+        @include mq('phablet') {
+          width: 100%;
+          margin-right: 0;
+        }
+      }
+
+      font-weight: normal;
+      font-size: vw(25);
+      line-height: 150%;
+      color: #000000;
+
+      @include mq('phablet') {
+        font-size: vwm(20);
+        line-height: 140%;
+        margin-bottom: vwm(40);
+      }
+
+      & + & {
+        margin-top: vw(30);
+
+        @include mq('phablet') {
+          margin-top: vwm(30);
+        }
+      }
+    }
+
+    &__img {
+      &-desktop {
+        display: block;
+        width: auto;
+        max-width: vw(1040);
+
+        @include mq('phablet') {
+          display: none;
+        }
+      }
+
+      &-mobile {
+        width: 100%;
+        display: none;
+
+        @include mq('phablet') {
+          display: block;
+          width: vwm(320);
+          margin-left: vwm(-10);
+        }
+      }
+    }
+  }
+}

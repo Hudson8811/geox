@@ -1,0 +1,9 @@
+body {
+  @include font-source-sans(40px, #000, 400, 49px);
+  scroll-behavior: smooth;
+  background-color: #fff;
+}
+
+.nowrap {
+  white-space: nowrap;
+}

@@ -1,0 +1,22 @@
+.header {
+  background-color: #fff;
+  padding-bottom: vw(47);
+
+  @include mq('phablet') {
+    padding-bottom: 0;
+  }
+
+  &__link {
+    display: block;
+    width: vw(988);
+    height: vw(193);
+    margin: 0 auto;
+    background: center / cover url(../images/header.png) no-repeat;
+
+    @include mq('phablet') {
+      width: vwm(320);
+      height: vwm(56);
+      background: center / cover url(../images/header-mobile.png) no-repeat;
+    }
+  }
+}
