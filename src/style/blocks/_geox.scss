@@ -361,6 +361,7 @@
 
   &__content {
     display: flex;
+    display: -webkit-box;
     justify-content: flex-start;
     align-self: center;
 
