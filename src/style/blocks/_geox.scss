@@ -353,15 +353,14 @@
 
     @include mq('phablet') {
       font-weight: bold;
-      font-size: vwm(20);
-      line-height: vwm(24);
+      font-size: vwm(18);
+      line-height: vwm(22);
       color: #000000;
     }
   }
 
   &__content {
     display: flex;
-    display: -webkit-box;
     justify-content: flex-start;
     align-self: center;
 
@@ -449,7 +448,7 @@
     color: #000000;
 
     @include mq('phablet') {
-      font-size: vwm(20);
+      font-size: vwm(16);
       line-height: 140%;
 
       br {

@@ -84,9 +84,6 @@ body {
 .nowrap {
   white-space: nowrap; }
 
-.disabled {
-  pointer-events: none; }
-
 .geox {
   position: relative;
   height: 53.33333vw;
@@ -397,14 +394,14 @@ body {
   @media only screen and (max-width: 559px) {
     .test__title {
       font-weight: bold;
-      font-size: 6.25vw;
-      line-height: 7.5vw;
+      font-size: 5.625vw;
+      line-height: 6.875vw;
       color: #000000; } }
 
 .test__content {
+  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  display: -webkit-box;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -514,7 +511,7 @@ body {
   color: #000000; }
   @media only screen and (max-width: 559px) {
     .test__desc {
-      font-size: 6.25vw;
+      font-size: 5vw;
       line-height: 140%; }
       .test__desc br {
         display: none; }
