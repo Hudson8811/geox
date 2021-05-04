@@ -496,7 +496,8 @@
       }
     }
 
-    &__desc {
+    &__desc,
+    &__desc a {
       &-wrapper {
         display: block;
         margin-right: vw(25);
@@ -508,7 +509,6 @@
           margin-right: 0;
         }
       }
-
       font-weight: normal;
       font-size: vw(25);
       line-height: 150%;

@@ -3,7 +3,7 @@ $(document).ready(function(){
     var resaults = [
         {
             title:'Больше ответов А: классика в стиле Одри Хепберн', 
-            desc: 'Безупречный бежевый тренч, как у героини Одри Хепберн в «Завтраке у Тиффани», отлично подойдет тем, кто ищет спокойную и строгую по стилю вещь. Такой плащ может дополнить и женственный образ в духе lady like, и минималистский однотонный комплект, и коктейльное платье, и обычные джинсы с футболкой. Эта модель считается наиболее универсальной и вариативной, но при этом она максимально раскрывает феминность: сидит четко по фигуре, подчеркивает ее изгибы, придает образу аристократичность и собранность. Кстати, такой тренч из весенней коллекции Geox можно носить тремя разными способами: расстегнутым – для создания расслабленных, нарочито небрежных образов, с поясом – если хочется выглядеть собранно и женственно, и с поднятым воротником – для того, чтобы подчеркнуть строгость и структурность образа.',
+            desc: 'Безупречный бежевый тренч, как у героини Одри Хепберн в «Завтраке у Тиффани», отлично подойдет тем, кто ищет спокойную и строгую по стилю вещь. Такой плащ может дополнить и женственный образ в духе lady like, и минималистский однотонный комплект, и коктейльное платье, и обычные джинсы с футболкой. Эта модель считается наиболее универсальной и вариативной, но при этом она максимально раскрывает феминность: сидит четко по фигуре, подчеркивает ее изгибы, придает образу аристократичность и собранность. Кстати, такой тренч из весенней коллекции <a target="blank" href="https://breathe.geox.com/ru/">Geox</a> можно носить тремя разными способами: расстегнутым – для создания расслабленных, нарочито небрежных образов, с поясом – если хочется выглядеть собранно и женственно, и с поднятым воротником – для того, чтобы подчеркнуть строгость и структурность образа.',
             desc2:'',
             deskImageUrl:'assets/images/item1-desktop.png',
             mobImageUrl:'assets/images/item1-mobile.png'
@@ -55,7 +55,7 @@ $(document).ready(function(){
         infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
-        speed: 100,
+        speed: 0,
         arrows:false,
         dots:false,
         swipe:false,
@@ -91,6 +91,34 @@ $(document).ready(function(){
             $('.test__result__desc#d2').html(resaults[order].desc2);
             $('.test__result__img-desktop').attr('src', resaults[order].deskImageUrl)
             $('.test__result__img-mobile').attr('src', resaults[order].mobImageUrl)
+
+            gsap.from('.test__result__heading',{
+                scrollTrigger: '.test__result',
+                x: -400,
+                opacity: 0,
+                duration:1
+            })
+
+            gsap.from('.test__result__desc',{
+                scrollTrigger: '.test__result',
+                x: -400,
+                opacity: 0,
+                duration:1
+            })
+
+            gsap.from('.test__result__img-desktop',{
+                scrollTrigger: '.test__result',
+                x: 400,
+                opacity: 0,
+                duration:1
+            })
+
+            gsap.from('.test__result__img-mobile',{
+                scrollTrigger: '.test__result',
+                x: 400,
+                opacity: 0,
+                duration:1
+            })
         }
     })
 
@@ -100,3 +128,121 @@ $(document).ready(function(){
     });
     
 })
+
+gsap.registerPlugin(ScrollTrigger)
+const t1 = new TimelineMax()
+
+
+
+
+t1.from('.geox__bg',{
+    scrollTrigger: '.geox__bg',
+    opacity: 0,
+    duration:1,
+})
+t1.from('.geox__heading-item:first-child',{
+    scrollTrigger: '.geox__heading-item:first-child',
+    x: -400,
+    opacity: 0,
+    duration:1
+})
+
+t1.from('.geox__heading-item:last-child',{
+    scrollTrigger: '.geox__heading-item:last-child',
+    x: 400,
+    opacity: 0,
+    duration:1,
+}, '-=1')
+t1.from('.geox__desc',{
+    scrollTrigger: '.geox__desc',
+    x: -400,
+    opacity: 0,
+    duration:1,
+})
+
+gsap.from('.preview__desc',{
+    scrollTrigger: '.preview__desc',
+    x: -400,
+    opacity: 0,
+    duration:1,
+})
+
+gsap.from('.preview__btn',{
+    scrollTrigger: '.preview__btn',
+    x: 400,
+    opacity: 0,
+    duration:1,
+})
+
+function animationSlide(itemNumber){
+    gsap.from(`#item${itemNumber} .test__counts`,{
+        scrollTrigger: `#item${itemNumber}`,
+        x: -400,
+        opacity: 0,
+        duration:1,
+    })
+    
+    gsap.from(`#item${itemNumber} .test__title`,{
+        scrollTrigger: `#item${itemNumber}`,
+        x: 400,
+        opacity: 0,
+        duration:1,
+    })
+    
+    gsap.from(`#item${itemNumber} .test__image`,{
+        scrollTrigger: `#item${itemNumber}`,
+        x: -400,
+        opacity: 0,
+        duration:1,
+    })
+    
+    gsap.from(`#item${itemNumber} .test__vars`,{
+        scrollTrigger: `#item${itemNumber}`,
+        x: 400,
+        opacity: 0,
+        duration:1,
+    })
+}
+
+function animationSlideRot(itemNumber){
+    gsap.from(`#item${itemNumber} .test__counts`,{
+        scrollTrigger: `#item${itemNumber}`,
+        x: -400,
+        opacity: 0,
+        duration:1,
+    })
+    
+    gsap.from(`#item${itemNumber} .test__title`,{
+        scrollTrigger: `#item${itemNumber}`,
+        x: 400,
+        opacity: 0,
+        duration:1,
+    })
+    
+    gsap.from(`#item${itemNumber} .test__image`,{
+        scrollTrigger: `#item${itemNumber}`,
+        x: 400,
+        opacity: 0,
+        duration:1,
+    })
+    
+    gsap.from(`#item${itemNumber} .test__vars`,{
+        scrollTrigger: `#item${itemNumber}`,
+        x: -400,
+        opacity: 0,
+        duration:1,
+    })
+}
+
+animationSlide(1)
+
+$('.test__slider').on('afterChange', function(event, slick, currentSlide,){
+    const even = n => !(n % 2);
+    count = currentSlide + 1
+    if(even(count)){
+        animationSlideRot(count)
+    } else{
+        animationSlide(count)
+    }
+    
+});

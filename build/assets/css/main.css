@@ -84,6 +84,9 @@ body {
 .nowrap {
   white-space: nowrap; }
 
+.wrapper {
+  overflow: hidden; }
+
 .geox {
   position: relative;
   height: 53.33333vw;
@@ -552,30 +555,42 @@ body {
     @media only screen and (max-width: 559px) {
       .test__result__content {
         display: block; } }
-  .test__result__desc {
+  .test__result__desc,
+  .test__result__desc a {
     font-weight: normal;
     font-size: 1.30208vw;
     line-height: 150%;
     color: #000000; }
-    .test__result__desc-wrapper {
+    .test__result__desc-wrapper,
+    .test__result__desc a-wrapper {
       display: block;
       margin-right: 1.30208vw;
       width: 32.5vw;
       -ms-flex-negative: 0;
           flex-shrink: 0; }
       @media only screen and (max-width: 559px) {
-        .test__result__desc-wrapper {
+        .test__result__desc-wrapper,
+        .test__result__desc a-wrapper {
           width: 100%;
           margin-right: 0; } }
     @media only screen and (max-width: 559px) {
-      .test__result__desc {
+      .test__result__desc,
+      .test__result__desc a {
         font-size: 6.25vw;
         line-height: 140%;
         margin-bottom: 12.5vw; } }
-    .test__result__desc + .test__result__desc {
+    .test__result__desc + .test__result__desc,
+    .test__result__desc a + .test__result__desc, .test__result__desc +
+    .test__result__desc a,
+    .test__result__desc a +
+    .test__result__desc a {
       margin-top: 1.5625vw; }
       @media only screen and (max-width: 559px) {
-        .test__result__desc + .test__result__desc {
+        .test__result__desc + .test__result__desc,
+        .test__result__desc a + .test__result__desc, .test__result__desc +
+        .test__result__desc a,
+        .test__result__desc a +
+        .test__result__desc a {
           margin-top: 9.375vw; } }
   .test__result__img-desktop {
     display: block;
