@@ -405,8 +405,9 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -ms-flex-item-align: center;
-      align-self: center; }
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
   @media only screen and (max-width: 559px) {
     .test__content {
       -webkit-box-orient: vertical;

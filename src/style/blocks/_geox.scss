@@ -362,7 +362,7 @@
   &__content {
     display: flex;
     justify-content: flex-start;
-    align-self: center;
+    align-items: center;
 
     @include mq('phablet') {
       flex-direction: column;
