@@ -84,6 +84,9 @@ body {
 .nowrap {
   white-space: nowrap; }
 
+.disabled {
+  pointer-events: none; }
+
 .geox {
   position: relative;
   height: 53.33333vw;
