@@ -563,6 +563,9 @@
 .test__result__img {
   position: absolute;
   display: block;
+  @include mq('phablet') {
+    display: none;
+  }
 }
 
 .order0 {

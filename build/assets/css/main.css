@@ -616,6 +616,9 @@ body {
 .test__result__img {
   position: absolute;
   display: block; }
+  @media only screen and (max-width: 559px) {
+    .test__result__img {
+      display: none; } }
 
 .order0 .test__result__img--0 {
   top: 0;
