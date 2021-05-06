@@ -312,3 +312,59 @@ $('.test__slider').on('afterChange', function(event, slick, currentSlide,){
     }
     
 });
+
+gsap.from('.header__logo',{
+    scrollTrigger: '.header',
+    x: -400,
+    opacity: 0,
+    duration:1
+})
+
+gsap.from('.header__line',{
+    scrollTrigger: '.header',
+    x: 400,
+    opacity: 0,
+    duration:1
+})
+const t3 = new TimelineMax()
+t3.from('.header__item:nth-child(1)',{
+    scrollTrigger: '.header',
+    y: 400,
+    opacity: 0,
+    duration:1
+},'-=0.9').from('.header__item:nth-child(2)',{
+    scrollTrigger: '.header',
+    y: 400,
+    opacity: 0,
+    duration:1
+},'-=0.8').from('.header__item:nth-child(3)',{
+    scrollTrigger: '.header',
+    y: 400,
+    opacity: 0,
+    duration:1
+},'-=0.8').from('.header__item:nth-child(4)',{
+    scrollTrigger: '.header',
+    y: 400,
+    opacity: 0,
+    duration:1
+},'-=0.8').from('.header__item:nth-child(5)',{
+    scrollTrigger: '.header',
+    y: 400,
+    opacity: 0,
+    duration:1
+},'-=0.8').from('.header__item:nth-child(6)',{
+    scrollTrigger: '.header',
+    y: 400,
+    opacity: 0,
+    duration:1
+},'-=0.8').from('.header__item:nth-child(7)',{
+    scrollTrigger: '.header',
+    y: 400,
+    opacity: 0,
+    duration:1
+},'-=0.8').from('.header__item:nth-child(8)',{
+    scrollTrigger: '.header',
+    y: 400,
+    opacity: 0,
+    duration:1
+},'-=0.8')
