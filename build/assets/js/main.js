@@ -42,7 +42,9 @@ for(i in Y){for(e=Y[i].tweens,t=e.length;--t>-1;)e[t]._gc&&e.splice(t,1);0===e.l
 
 
 /* my scripts */
+
 $(document).ready(function(){
+    var ordering = 0
     var points = []
     var resaults = [
         {
@@ -105,6 +107,15 @@ $(document).ready(function(){
     ]
 
     
+$('.test__result-btn').click(function(e){
+    e.preventDefault()
+    points.splice(0, 7)
+    $('.test__result').removeClass(`order${ordering}`)
+    $('.test__slider').show()
+    $('.test__result').hide()
+    $('.test__slider').slick('slickGoTo',0)
+    console.log(points)
+})
     function flexAlign(){
         if($(window).width() < 560){
             const vars = document.querySelectorAll('.test__label')
@@ -156,6 +167,8 @@ $(document).ready(function(){
             } else if(count4 > count1 && count4 > count3 && count4 > count2){
                 order = 3
             }
+            console.log(points)
+            ordering = order
             $('.test__result').addClass(`order${order}`)
             $('.test__slider').hide()
             $('.test__result').show()
@@ -229,10 +242,41 @@ $(document).ready(function(){
                 opacity: 0,
                 duration:3
             })
+            gsap.from('.test__result-btn',{
+                scrollTrigger: '.test__result',
+                x: -400,
+                opacity: 0,
+                duration:1
+            })
+
+            gsap.from('.test__share--1',{
+                scrollTrigger: '.test__result',
+                y: 400,
+                opacity: 0,
+                duration:0.2
+            })
+            gsap.from('.test__share--2',{
+                scrollTrigger: '.test__result',
+                y: 400,
+                opacity: 0,
+                duration:0.4
+            })
+            gsap.from('.test__share--3',{
+                scrollTrigger: '.test__result',
+                y: 400,
+                opacity: 0,
+                duration:0.6
+            })
+            gsap.from('.test__share--4',{
+                scrollTrigger: '.test__result',
+                y: 400,
+                opacity: 0,
+                duration:0.8
+            })
         }
     })
 
-    $('.preview__btn').click(function(){
+    $('.preview__btn-test').click(function(){
         $('html, body').animate({scrollTop: $('.test').offset().top}, 1000);
         return false;
     });
@@ -277,8 +321,8 @@ gsap.from('.preview__desc',{
     duration:1,
 })
 
-gsap.from('.preview__btn',{
-    scrollTrigger: '.preview__btn',
+gsap.from('.preview__btn-test',{
+    scrollTrigger: '.preview__btn-test',
     x: 400,
     opacity: 0,
     duration:1,
@@ -370,6 +414,9 @@ gsap.from('.header__line',{
     opacity: 0,
     duration:1
 })
+
+
+
 const t3 = new TimelineMax()
 t3.from('.header__item:nth-child(1)',{
     scrollTrigger: '.header',

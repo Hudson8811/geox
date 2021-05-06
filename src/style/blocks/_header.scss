@@ -1,8 +1,15 @@
 .header {
   background-color: #fff;
-  padding-top: vw(43);
-  width: vw(918);
-  margin: 0 auto vw(56);
+  padding-top: 43px;
+  width: 918px;
+  max-width: 100%;
+  margin: 0 auto 56px;
+
+  @include mq('tablet-wide') {
+    padding-top: vw(43);
+    max-width: 96%;
+    margin: 0 auto vw(56);
+  }
 
   @include mq('phablet') {
     padding-top: vwm(3);
@@ -12,14 +19,14 @@
 
   &__logo {
     display: block;
-    width: vw(363);
-    height: vw(82);
+    width: 363px;
+    height: 82px;
     margin: 0 auto;
     background: center / cover url(../images/header.png) no-repeat;
 
     @include mq('phablet') {
-      width: vwm(92);
-      height: vwm(28);
+      width: vwm(184);
+      height: vwm(56);
       background: center / cover url(../images/header__mobile.png) no-repeat;
     }
   }
@@ -27,12 +34,12 @@
   &__line {
     display: block;
     width: 100%;
-    height: vw(4);
+    height: 4px;
     background: #ba1b7f;
-    margin: vw(19) 0 vw(23);
+    margin: 19px 0 23px;
 
     @include mq('phablet') {
-      height: vwm(1);
+      height: vwm(2);
       margin: vwm(10) 0 vwm(15);
     }
   }
@@ -41,24 +48,36 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    @include mq('tablet-wide') {
+      justify-content: center;
+    }
     @include mq('phablet') {
       display: none;
     }
   }
 
   &__item {
-    margin: 0 vw(23);
+    margin: 0 23px;
+
+    @include mq('tablet-wide') {
+      margin: 0 vw(23);
+    }
   }
 
   &__link {
     font-family: 'Roboto', sans-serif;
     display: block;
     font-weight: 500;
-    font-size: vw(14);
-    line-height: vw(16);
+    font-size: 14px;
+    line-height: 16px;
     color: #000000;
     text-decoration: none;
     text-transform: uppercase;
     width: max-content;
+
+    @include mq('tablet-wide') {
+      font-size: vw(24);
+      line-height: vw(24);
+    }
   }
 }
